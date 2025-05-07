@@ -3,6 +3,8 @@
     "name": "flax-template-sdk53",
     "slug": "flax-template-sdk53",
     "version": "1.0.0",
+    "sdkVersion": "53.0.0",
+    "platforms": ["ios", "android", "web"],
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "flaxtemplatesdk53",
