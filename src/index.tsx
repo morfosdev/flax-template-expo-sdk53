@@ -135,7 +135,8 @@ xmlns="http://www.w3.org/2000/svg"
 
             args,
           }}/>
-        , (...args:any) => <Elements.IptTxtEdit pass={{
+        , 
+        (...args:any) => <Elements.IptTxtEdit pass={{
           propsArray: [{}],
 
           stylesArray: [{
@@ -153,7 +154,40 @@ xmlns="http://www.w3.org/2000/svg"
         }})],
 
           args,
+        }}/>, 
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[
+              {
+                backgroundColor: 'white',
+                justifyContent: 'center',
+                minHeight: 22,
+                width: "100%",
+              }
+              ],
+
+            functions:[()=>{}],            childrenItems:[(...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            `{ color: "white" }`
+          ],
+
+          children: [
+            "Escreva..."
+          ],
+
+          args,
+
         }}/>],
+
+            args,
+          }}/>
+        ],
 
           functions:[()=>{}],
 
