@@ -167,11 +167,11 @@ xmlns="http://www.w3.org/2000/svg"
           ],
 
           arrStyles: [
-            `{ color: "white" }`
+            `{ color: "blue" }`
           ],
 
           children: [
-            "Escreva..."
+            `Mostrar`
           ],
 
           args,
