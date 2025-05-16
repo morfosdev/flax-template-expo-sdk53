@@ -54,7 +54,7 @@
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
- arrFunctions: [()=>{}]
+ arrFunctions: [() => "all.lists.lt1"]
  , trigger: 'on listen'
 }})],            childrenItems:[
         
