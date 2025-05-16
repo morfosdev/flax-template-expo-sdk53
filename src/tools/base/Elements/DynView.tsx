@@ -5,7 +5,8 @@ import React, { useEffect, useState } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
 
 // ---------- import Local Tools
-import { getStlValues, mapElements, getVarValue } from '../project';
+import { getStlValues, mapElements, getVarValue, pathSel } from '../project';
+import { useData } from '../../..';
 
 export const css =
   'color: lightblue; background-color: black; font-size: 11px; padding: 2px 6px; border-radius: 3px';
@@ -38,9 +39,12 @@ export const DynView = (props: Tprops) => {
   if (!props) return <></>;
 
   const [sttTypeFunc, setTypeFunc] = useState('');
+  const [sttVarPath, setVarPath] = useState('');
   const [sttPressFuncs, setPressFuncs] = useState<
     Array<(args: any) => Promise<void>>
   >([]);
+
+  let condShow = useData(ct => pathSel(ct, sttVarPath));
 
   // ---------- set Props
   const { elementsProperties, styles, functions } = props.pass;
@@ -54,6 +58,13 @@ export const DynView = (props: Tprops) => {
     // ------- set Init Functions (Capsules)
     if (trigger === 'on init') {
       for (const currFunc of arrFunctions) await currFunc(args);
+    }
+    if (trigger === 'on listen') {
+      for (const currFunc of arrFunctions) {
+        // setVarPath
+        const res = await currFunc(args);
+        console.log('Tentando pegar VarPath', { res });
+      }
     }
   };
 
@@ -103,4 +114,10 @@ export const DynView = (props: Tprops) => {
 
   if (sttTypeFunc === 'on init')
     return <View {...allProps}>{mapElements(childrenItems, args)}</View>;
+
+  if (sttTypeFunc === 'on listen') {
+    return (
+      condShow && <View {...allProps}>{mapElements(childrenItems, args)}</View>
+    );
+  }
 };
