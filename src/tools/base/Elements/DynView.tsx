@@ -63,7 +63,10 @@ export const DynView = (props: Tprops) => {
       for (const currFunc of arrFunctions) {
         // setVarPath
         const res = await currFunc(args);
-        console.log('Tentando pegar VarPath', { res });
+        if (typeof res === 'string') {
+          console.log('VarPath', res);
+          setVarPath(res);
+        }
       }
     }
   };
@@ -121,3 +124,4 @@ export const DynView = (props: Tprops) => {
     );
   }
 };
+
