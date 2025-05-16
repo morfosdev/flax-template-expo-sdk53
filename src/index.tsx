@@ -57,7 +57,7 @@
  arrFunctions: [
         (...args) => {
           // ---------- get Function from A_Project Scope
-          return tools.goTo("home");
+          return tools.goTo("home1");
         }
         ]
  , trigger: 'on listen'
