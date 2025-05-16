@@ -40,6 +40,7 @@
               ],
 
           screenElements:[
+        
 
           (...args:any) => <Elements.DynView pass={{
             elementsProperties:['{}'],
@@ -130,7 +131,25 @@ xmlns="http://www.w3.org/2000/svg"
 
             args,
           }}/>
-        ],
+        , (...args:any) => <Elements.IptTxtEdit pass={{
+          propsArray: [{}],
+
+          stylesArray: [{
+                color: 'black',
+                fontSize: 14,
+                // fontSize: '20px',<= #ATTENTION: Native ERROR! No string!
+              }],
+
+          path: [`all.inputs.ipt1`],
+
+          funcsArray: [async (...args) =>
+        functions.setVar({ args, pass:{
+          keyPath: [`all.inputs.ipt1`],
+          value: [`$arg_callback`]
+        }})],
+
+          args,
+        }}/>],
 
           functions:[()=>{}],
 
