@@ -190,6 +190,7 @@ xmlns="http://www.w3.org/2000/svg"
             args,
           }}/>
         , 
+        
 
           (...args:any) => <Elements.DynView pass={{
             elementsProperties:['{}'],
@@ -223,7 +224,12 @@ xmlns="http://www.w3.org/2000/svg"
 
             args,
           }}/>
-        ],
+        , (...args:any) => <Elements.ScrollBar pass={{
+            styles: [],
+            arrProps: [],
+            arrItems: [() => <></>],
+            args,
+        }}/>],
 
           functions:[()=>{}],
 
