@@ -361,9 +361,9 @@ xmlns="http://www.w3.org/2000/svg"
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
- arrFunctions: [() => {
+ arrFunctions: [(args) => {
 console.log({ tools });
-console.log({ ts1: tools.jsvals.argReader("#0.0.item") });
+console.log({ ts1: tools.jsvals.argReader({ pass: { argPath: "#0.0.item", args } }) });
 
   const path = "all.toggles.checkbox1";
   const currState = tools.getCtData(path);
