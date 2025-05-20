@@ -268,7 +268,7 @@ xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
     <Path
-      stroke="#374151"
+      stroke="#FFF"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={4.17}
