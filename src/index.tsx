@@ -244,7 +244,7 @@ xmlns="http://www.w3.org/2000/svg"
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
  arrFunctions: [() => {
-  const path = "all.toggles.box1";
+  const path = "all.toggles.checkbox1";
   const currState = tools.getCtData(path);
   tools.functions.setVar({
 		args: '',
