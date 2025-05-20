@@ -257,7 +257,38 @@ xmlns="http://www.w3.org/2000/svg"
  functions.funcGroup({ args, pass:{
  arrFunctions: [() => [ "all.toggles.checkbox1", "==", true ]]
  , trigger: 'on listen'
-}})],            childrenItems:[() =><></>],
+}})],            childrenItems:[(...args:any) => <Elements.SvgView1 pass={{
+      componentSvg: (Svg:any, SvgObj:any) => {
+        const { Defs, Stop, Path, LinearGradient, G, Circle, Rect, Mask } = SvgObj;
+        return (props:any) => (<Svg
+    ="http://www.w3.org/2000/svg"
+    width={40}
+    height={40}
+    viewBox="0 0 40 40"
+    {...props}
+  >
+    <Path
+      stroke="#FFF"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={4.17}
+      d="M33.333 10 15 28.333 6.667 20"
+    />
+  </Svg>)
+      },
+
+      svgOriginal: `
+        <svg></svg>
+      `,
+
+      altura: "14px",
+
+      largura: "14px",
+
+      preenchimento: ['black'],
+
+      args,
+    }}/>],
 
             args,
           }}/>
