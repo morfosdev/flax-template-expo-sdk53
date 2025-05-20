@@ -265,7 +265,11 @@ console.log({ currState });
 
             styles:[`{ width: 23, height: 23, backgroundColor: "#FFF", borderRadius: 4, borderWidth: 2, borderColor: "#CCC"}`],
 
-            functions:[()=>{}],            childrenItems:[() =><></>],
+            functions:[async (...args) =>
+ functions.funcGroup({ args, pass:{
+ arrFunctions: [() => [ "all.toggles.checkbox1", "==", false ]]
+ , trigger: 'on listen'
+}})],            childrenItems:[() =><></>],
 
             args,
           }}/>
