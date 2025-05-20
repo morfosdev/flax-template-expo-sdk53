@@ -135,7 +135,10 @@ xmlns="http://www.w3.org/2000/svg"
 
             args,
           }}/>
-        , 
+        , (...args:any) => <Elements.ScrollBar pass={{
+            styles: [],
+            arrProps: [],
+            arrItems: [
         (...args:any) => <Elements.IptTxtEdit pass={{
           propsArray: [{}],
 
@@ -156,40 +159,6 @@ xmlns="http://www.w3.org/2000/svg"
           args,
         }}/>, 
         
-
-          (...args:any) => <Elements.DynView pass={{
-            elementsProperties:['{}'],
-
-            styles:[`{ width: 100, height: 20, backgroundColor: "yellow", alignItems: "center", justifyContent: "center" }`],
-
-            functions:[async (...args) =>
- functions.funcGroup({ args, pass:{
- arrFunctions: [async (...args) =>
-        functions.setVar({ args, pass:{
-          keyPath: [`all.toggles.box1`],
-          value: [true]
-        }})]
- , trigger: 'on press'
-}})],            childrenItems:[(...args:any) => <Elements.Text pass={{
-          arrProps: [
-            '{}'
-          ],
-
-          arrStyles: [
-            `{ color: "blue" }`
-          ],
-
-          children: [
-            `Mostrar`
-          ],
-
-          args,
-
-        }}/>],
-
-            args,
-          }}/>
-        , 
 
           (...args:any) => <Elements.DynView pass={{
             elementsProperties:['{}'],
@@ -223,7 +192,43 @@ xmlns="http://www.w3.org/2000/svg"
 
             args,
           }}/>
+        , 
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[`{ width: 100, height: 20, backgroundColor: "yellow", alignItems: "center", justifyContent: "center" }`],
+
+            functions:[async (...args) =>
+ functions.funcGroup({ args, pass:{
+ arrFunctions: [async (...args) =>
+        functions.setVar({ args, pass:{
+          keyPath: [`all.toggles.box1`],
+          value: [true]
+        }})]
+ , trigger: 'on press'
+}})],            childrenItems:[(...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            `{ color: "blue" }`
+          ],
+
+          children: [
+            `Mostrar`
+          ],
+
+          args,
+
+        }}/>],
+
+            args,
+          }}/>
         ],
+            args,
+        }}/>],
 
           functions:[()=>{}],
 
