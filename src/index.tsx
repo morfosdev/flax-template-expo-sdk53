@@ -363,7 +363,7 @@ xmlns="http://www.w3.org/2000/svg"
  functions.funcGroup({ args, pass:{
  arrFunctions: [(args) => {
 console.log({ tools, args });
-console.log({ current: args[0].item });
+console.log({ current: args[0] });
 
   const path = "all.toggles.checkbox1";
   const currState = tools.getCtData(path);
