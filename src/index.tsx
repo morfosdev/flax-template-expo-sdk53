@@ -365,7 +365,8 @@ xmlns="http://www.w3.org/2000/svg"
 console.log({ tools, args });
 console.log({ current: args[0] });
 
-  const path = "all.toggles.checkbox1";
+  const path = "all.lists.lst3." + args[0].index + ".check";
+
   const currState = tools.getCtData(path);
   tools.functions.setVar({
 		args: '',
