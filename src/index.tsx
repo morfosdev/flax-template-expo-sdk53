@@ -253,7 +253,11 @@ xmlns="http://www.w3.org/2000/svg"
 
             styles:[`{ width: 23, height: 23, backgroundColor: "red", borderRadius: 4}`],
 
-            functions:[()=>{}],            childrenItems:[() =><></>],
+            functions:[async (...args) =>
+ functions.funcGroup({ args, pass:{
+ arrFunctions: [() => [ "all.toggles.checkbox1", "==", true ]]
+ , trigger: 'on press'
+}})],            childrenItems:[() =><></>],
 
             args,
           }}/>
