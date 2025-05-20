@@ -251,7 +251,7 @@ xmlns="http://www.w3.org/2000/svg"
           (...args:any) => <Elements.DynView pass={{
             elementsProperties:['{}'],
 
-            styles:[`{ width: 20, height: 20, alignItems: "center", justifyContent: "center", backgroundColor: "$var_all.colors.primary", borderRadius: 4, marginRight: 5}`],
+            styles:[`{ width: 20, height: 20, alignItems: "center", justifyContent: "center", backgroundColor: "$var_all.colors.secondary", borderRadius: 4, marginRight: 5}`],
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
@@ -341,7 +341,7 @@ xmlns="http://www.w3.org/2000/svg"
  {
  'all': { 
 'colors': { 
-'primary': "#fff", 'secondary': "red" } 
+'primary': "#fff", 'secondary': "#0064fe" } 
 , 
 'cond1': false, 
 'func1': (nativeEvent)=>console.log(nativeEvent), 
