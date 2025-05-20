@@ -136,7 +136,7 @@ xmlns="http://www.w3.org/2000/svg"
             args,
           }}/>
         , (...args:any) => <Elements.ScrollBar pass={{
-            styles: [],
+            styles: [`{ backgroundColor: "red" }`],
             arrProps: [],
             arrItems: [
         (...args:any) => <Elements.IptTxtEdit pass={{
