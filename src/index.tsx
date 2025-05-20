@@ -384,7 +384,7 @@ console.log({ current: args[0] });
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
- arrFunctions: [() => [ "all.toggles.checkbox1", "==", true ]]
+ arrFunctions: [(args) => [ "all.lists.lst3" + args[0].item.check, "==", true ]]
  , trigger: 'on listen'
 }})],            childrenItems:[(...args:any) => <Elements.SvgView1 pass={{
       componentSvg: (Svg:any, SvgObj:any) => {
