@@ -298,7 +298,7 @@ xmlns="http://www.w3.org/2000/svg"
           (...args:any) => <Elements.DynView pass={{
             elementsProperties:['{}'],
 
-            styles:[`{ width: 23, height: 23, backgroundColor: "#FFF", borderRadius: 4, borderWidth: 2, borderColor: "#CCC"}`],
+            styles:[`{ width: 20, height: 20, backgroundColor: "#FFF", borderRadius: 4, borderWidth: 2, borderColor: "#CCC", marginRight: 5}`],
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
