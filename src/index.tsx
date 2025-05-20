@@ -256,7 +256,7 @@ xmlns="http://www.w3.org/2000/svg"
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
  arrFunctions: [() => [ "all.toggles.checkbox1", "==", true ]]
- , trigger: 'on press'
+ , trigger: 'on listen'
 }})],            childrenItems:[() =><></>],
 
             args,
