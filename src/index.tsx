@@ -252,14 +252,7 @@ console.log({ currState });
           (...args:any) => <Elements.DynView pass={{
             elementsProperties:['{}'],
 
-            styles:[
-              {
-                backgroundColor: 'white',
-                justifyContent: 'center',
-                minHeight: 22,
-                width: "100%",
-              }
-              ],
+            styles:[`{ width: 23, height: 23, backgroundColor: "red", borderRadius: 4}`],
 
             functions:[()=>{}],            childrenItems:[() =><></>],
 
