@@ -328,7 +328,23 @@ xmlns="http://www.w3.org/2000/svg"
 
             args,
           }}/>
-        , (...args:any) => <Elements.FlatList2 pass={{
+        , 
+        (...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            `{ marginTop: 20 }`
+          ],
+
+          children: [
+            `Check Dentro de Lista`
+          ],
+
+          args,
+
+        }}/>, (...args:any) => <Elements.FlatList2 pass={{
           elementProperties: [
             {}
           ],
