@@ -2365,7 +2365,7 @@
                 "pt-br": "",
                 "en": ""
               },
-              "capsIptCapsTypesToAdd": ["Estilo Caixa", "Estilo Layout"],
+              "capsIptCapsTypesToAdd": ["string process"],
               "capsIptCapsDfCode": ""
             }
           },
@@ -2383,7 +2383,7 @@
                 "pt-br": "",
                 "en": ""
               },
-              "capsIptCapsTypesToAdd": ["Propriedade Rolagem"],
+              "capsIptCapsTypesToAdd": ["string process"],
               "capsIptCapsDfCode": ""
             }
           },
