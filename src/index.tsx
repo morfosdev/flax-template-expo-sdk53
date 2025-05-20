@@ -367,7 +367,7 @@ console.log({ current: args[0] });
 
   const path = "all.lists.lst3." + args[0].index + ".check";
 
-  const currState = tools.getCtData(path);
+  const currState = args[0].item.check;
   tools.functions.setVar({
 		args: '',
 		pass: { keyPath: [path], value: [!currState] },
