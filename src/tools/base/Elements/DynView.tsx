@@ -11,6 +11,7 @@ import { useData } from '../../..';
 export const css =
   'color: lightblue; background-color: black; font-size: 11px; padding: 2px 6px; border-radius: 3px';
 
+type Tconds = '==' | '!=' | '>' | '<' | '<=' | '>=';
 type Tprops = {
   pass: {
     elementsProperties: any;
@@ -39,12 +40,16 @@ export const DynView = (props: Tprops) => {
   if (!props) return <></>;
 
   const [sttTypeFunc, setTypeFunc] = useState('');
-  const [sttVarPath, setVarPath] = useState('');
+  const [sttCondParts, setCondParts] = useState({
+    path: '',
+    operator: '==',
+    compareVal: null,
+  });
   const [sttPressFuncs, setPressFuncs] = useState<
     Array<(args: any) => Promise<void>>
   >([]);
 
-  let condShow = useData(ct => pathSel(ct, sttVarPath));
+  let varValue = useData(ct => pathSel(ct, sttCondParts.path));
 
   // ---------- set Props
   const { elementsProperties, styles, functions } = props.pass;
@@ -61,11 +66,14 @@ export const DynView = (props: Tprops) => {
     }
     if (trigger === 'on listen') {
       for (const currFunc of arrFunctions) {
-        // setVarPath
-        const res = await currFunc(args);
-        if (typeof res === 'string') {
-          console.log('VarPath', res);
-          setVarPath(res);
+        const res: [string, Tconds, any] = await currFunc(args);
+        const path = res[0];
+        const operator = res[1];
+        const compareVal = res[2];
+
+        if (typeof path === 'string') {
+          console.log('VarPath', path);
+          setCondParts({ path, operator, compareVal });
         }
       }
     }
@@ -119,6 +127,18 @@ export const DynView = (props: Tprops) => {
     return <View {...allProps}>{mapElements(childrenItems, args)}</View>;
 
   if (sttTypeFunc === 'on listen') {
+    const operators = {
+      '==': (a, b) => a == b,
+      '!=': (a, b) => a != b,
+      '>': (a, b) => a > b,
+      '>=': (a, b) => a >= b,
+      '<': (a, b) => a < b,
+      '<=': (a, b) => a <= b,
+    };
+
+    const operatorFunc = operators[sttCondParts.operator];
+    const condShow = operatorFunc?.(varValue, sttCondParts.compareVal);
+
     return (
       condShow && <View {...allProps}>{mapElements(childrenItems, args)}</View>
     );
