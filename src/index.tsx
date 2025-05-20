@@ -54,7 +54,7 @@
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
- arrFunctions: [()=>"all.toggles.box1"]
+ arrFunctions: [() => [ "all.toggles.box1", "==", true ]]
  , trigger: 'on listen'
 }})],            childrenItems:[
         
