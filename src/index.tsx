@@ -285,7 +285,7 @@ xmlns="http://www.w3.org/2000/svg"
 
       largura: "14px",
 
-      preenchimento: ['black'],
+      preenchimento: [`transparent`],
 
       args,
     }}/>],
