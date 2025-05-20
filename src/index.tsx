@@ -243,7 +243,6 @@ xmlns="http://www.w3.org/2000/svg"
 		args: '',
 		pass: { keyPath: [path], value: [!currState] },
 	});
-console.log({ currState });
 }]
  , trigger: 'on press'
 }})],            childrenItems:[
