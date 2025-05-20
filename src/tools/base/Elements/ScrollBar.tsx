@@ -1,10 +1,11 @@
 
 // ---------- import Packs
 import React from 'react';
+import JSON5 from 'json5';
 import { ScrollView } from 'react-native';
 
 // ---------- import Local Tools
-import { getStlValues, mapElements } from '../project';
+import { getStlValues, mapElements, getVarValue } from '../project';
 
 type Tprops_ScrollBar = {
   pass: { styles: any[]; arrProps: any[]; arrItems: any; args: any };
@@ -16,27 +17,21 @@ export const ScrollBar = (props: Tprops_ScrollBar) => {
   const stl = getStlValues(styles);
 
   // ------- set User Element Properties (If Exists)
-  let userElProps = {};
+  const userElProps: any = {};
+  for (let strObj of arrProps) {
+    if (!strObj) continue;
+    if (!props) continue;
+    if (typeof strObj !== 'string') continue;
 
-  for (const object of arrProps) {
-    const isFnc = typeof object === 'function';
-    let newObj = {};
-    if (isFnc) {
-      console.log('IS A FUNCTION !!!!!!!!!!');
-      console.log({ object });
-      console.log({ newObj });
-      newObj = object();
-      userElProps = { ...userElProps, ...newObj };
-    }
+    const parsedObject = JSON5.parse(strObj);
 
-    if (!isFnc) {
-      console.log('NOT FUNCTION');
-      console.log({ object });
-      console.log({ newObj });
-      for (const keyProp in object) {
-        const valueProp = object[keyProp];
-        userElProps[keyProp] = valueProp;
-      }
+    for (const keyProp in parsedObject) {
+      const valueProp = parsedObject[keyProp];
+
+      const [hasVar, varValue] = getVarValue(valueProp);
+
+      if (hasVar) userElProps[keyProp] = varValue;
+      if (!hasVar) userElProps[keyProp] = valueProp;
     }
   }
 
