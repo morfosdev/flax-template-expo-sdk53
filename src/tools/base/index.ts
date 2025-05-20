@@ -12,7 +12,7 @@ export const base = {
   functions,
   Elements,
 
-  // jsvals,
+  jsvals,
 
   // stls,
   // props,
