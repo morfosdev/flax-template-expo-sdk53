@@ -261,14 +261,14 @@ xmlns="http://www.w3.org/2000/svg"
       componentSvg: (Svg:any, SvgObj:any) => {
         const { Defs, Stop, Path, LinearGradient, G, Circle, Rect, Mask } = SvgObj;
         return (props:any) => (<Svg
-    ="http://www.w3.org/2000/svg"
+xmlns="http://www.w3.org/2000/svg"
     width={40}
     height={40}
     viewBox="0 0 40 40"
     {...props}
   >
     <Path
-      stroke="#FFF"
+      stroke="#374151"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={4.17}
