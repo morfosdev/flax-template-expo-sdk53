@@ -509,7 +509,11 @@ xmlns="http://www.w3.org/2000/svg"
           // console.log(initObj);
 
           const arrInitFuncs = [
-            ()=>{}
+            async (...args) =>
+  functions.firebase.fireInit({ args, pass:{
+   fbConfig: `all.firebaseConfig`,
+
+        }})
           ];
 
           export const useRoutes = create(() => ({ currRoute }));
