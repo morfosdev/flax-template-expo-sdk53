@@ -344,7 +344,8 @@ xmlns="http://www.w3.org/2000/svg"
 
           args,
 
-        }}/>, (...args:any) => <Elements.FlatList2 pass={{
+        }}/>, 
+        (...args:any) => <Elements.FlatList2 pass={{
           elementProperties: [
             {}
           ],
@@ -467,7 +468,41 @@ xmlns="http://www.w3.org/2000/svg"
                 width: "100%",
               }
               ],    args,
+        }}/>, 
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[`{ width: 100, height: 20, backgroundColor: "yellow", alignItems: "center", justifyContent: "center" }`],
+
+            functions:[async (...args) =>
+ functions.funcGroup({ args, pass:{
+ arrFunctions: [async (...args) =>
+        functions.firebase.getDocsTool({ args, pass:{
+   arrRefStrings: [`users`],
+            arrFuncs: [()=>{}],
+        }})]
+ , trigger: 'on press'
+}})],            childrenItems:[(...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            `{ color: "blue" }`
+          ],
+
+          children: [
+            `GetDocs: users`
+          ],
+
+          args,
+
         }}/>],
+
+            args,
+          }}/>
+        ],
             args,
         }}/>],
 
