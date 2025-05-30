@@ -148,7 +148,7 @@ xmlns="http://www.w3.org/2000/svg"
                 // fontSize: '20px',<= #ATTENTION: Native ERROR! No string!
               }],
 
-          path: [`all.inputs.ipt1`],
+          path: [" "],
 
           funcsArray: [async (...args) =>
         functions.setVar({ args, pass:{
