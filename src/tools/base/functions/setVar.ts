@@ -22,7 +22,6 @@ export const setVar = (props: Tprops_setVar) => {
 
   // ---------- join String
   const url = keyPath.reduce((prev, curr) => prev + curr, '');
-  console.log({ url });
 
   const typeValue = testArgsVars(value);
 
@@ -35,6 +34,11 @@ export const setVar = (props: Tprops_setVar) => {
     console.log('path:', url);
     console.log('type:', typeValue);
     console.table('value:', value[0]);
+
+    const isFunction = typeof value[0];
+    if (isFunction) {
+      return setData({ path: url, value: value[0](args) });
+    };
 
     return setData({ path: url, value: value[0] });
   }
@@ -88,13 +92,10 @@ const findFlatItem = obj => {
 
 const testArgsVars = (value: string[]) => {
   let typeValue: 'free' | 'var' | 'arg' = 'free';
-  const typeOfVal = typeof value;
 
-  if (typeOfVal === 'string') {
-    const joinedChild = value.join();
-    if (joinedChild.includes('$var_')) typeValue = 'var';
-    if (joinedChild.includes('$arg_')) typeValue = 'arg';
-  }
+  const joinedChild = value.join();
+  if (joinedChild.includes('$var_')) typeValue = 'var';
+  if (joinedChild.includes('$arg_')) typeValue = 'arg';
 
   return typeValue;
 };
