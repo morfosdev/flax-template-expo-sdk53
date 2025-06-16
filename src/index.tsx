@@ -617,7 +617,7 @@ xmlns="http://www.w3.org/2000/svg"
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
  arrFunctions: [() => {
-const item = tools.findFlatItem([[{item: {name: "João"}}]]);
+const item = tools.findFlatItem([[{idx: 0, item: {name: "João"}}]]);
 
 console.log({item});
 }]
