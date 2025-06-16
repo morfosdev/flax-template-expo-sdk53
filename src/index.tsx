@@ -619,7 +619,7 @@ xmlns="http://www.w3.org/2000/svg"
  arrFunctions: [() => {
 const item = tools.findFlatItem([[{item: {name: "João"}}]]);
 
-console.log({item);
+console.log({item});
 }]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
